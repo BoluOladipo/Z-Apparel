@@ -11,7 +11,7 @@ body {
     to {
         transform: rotate(360deg);
     }
-}
+} 
   
 /* Splash Screen Container */
 .splash-screen {
