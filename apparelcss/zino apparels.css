@@ -12,7 +12,7 @@ body {
         transform: rotate(360deg);
     }
 }
-
+ 
 /* Splash Screen Container */
 .splash-screen {
     position: fixed; /* Fixes the splash screen in place */
