@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}	
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navbar .logo img {
+    height: 85px;
+}
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    color: #333; /* Default color for the hamburger icon */
+}
+
+.menu-toggle:hover {
+    color: #fff; /* Change color to white on hover */
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li {
+    margin-left: 20px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar.active .nav-links {
+        display: flex;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+@media (max-width: 480px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: nowrap; /* Keep the elements on one line */
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .logo img {
+        max-width: 80px;
+    }
+
+    .nav-links ul {
+        gap: 10px; /* Reduces the gap between the links */
+    }
+
+    .nav-links ul li a {
+        font-size: 1em; /* Reduces the font size */
+    }
+
+    .search-bar input {
+        max-width: 120px; /* Further limits the input width */
+    }
+}
+
+/* Additional styling for very small screens (mobile phones) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+        flex-wrap: nowrap; /* Ensure it stays in one line */
+    }
+
+    .logo img {
+        max-width: 60px;
+    }
+
+    .nav-links ul {
+        gap: 5px; /* Even smaller gap between links */
+    }
+
+    .nav-links ul li a {
+        font-size: 0.9em; /* Further reduce the font size */
+    }
+
+    .search-bar input {
+        max-width: 100px; /* Adjust input width to fit well on small screens */
+    }
+
+    .search-bar button {
+        padding: 5px 10px; /* Reduce button padding */
+    }
+}
+
+/* Main content styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Animation Keyframes */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Apply sliding animation */
+.header {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    padding: 20px;
+    animation: slideInOut 12s ease-in-out infinite;
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.header p {
+    color: black;
+    font-size: 18px;
+    margin: 10px 0 0;
+}
+
+/* Contact section styling */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.contact-options {
+    width: 45%;
+}
+
+.option {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.option:hover {
+    transform: scale(1.05);
+}
+
+.option img {
+    width: 40px;
+    height: auto;
+}
+
+.option h2 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+    color: #2c3e50;
+}
+
+.option p {
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+.contact-image {
+    width: 50%;
+    text-align: right;
+}
+
+.contact-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* Tablet & smaller laptops (below 1024px) */
+@media (max-width: 1024px) {
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-image {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contact-options {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Mobile phones (below 768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-image img {
+        width: 90%;
+    }
+
+    .option {
+        width: 90%;
+        margin: 0 auto 20px auto;
+    }
+}
+
+.footer {
+    background-color: #2d2d48;
+    padding: 20px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.footer-section h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+.social-media-icons {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: flex-start; /* Aligns items to the start of the container */
+    gap: 10px; /* Adds space between the items */
+}
+
+.social-media-icons a {
+    color: #ffffff; /* Text color */
+     text-decoration: solid;
+    text-decoration: underline;/* Adds underline from links */
+    font-size: 18px; /* Adjust font size as needed */
+    display: flex; /* Aligns icon and text horizontally */
+    align-items: center; /* Vertically centers icon and text */
+    gap: 8px; /* Adds space between icon and text */
+}
+
+.social-media-icons a:hover {
+    color: #f1c40f; /* Change color on hover if needed */
+}
+
+.social-media-icons i {
+    font-size: 24px; /* Adjust icon size as needed */
+}
+
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer-bottom a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
