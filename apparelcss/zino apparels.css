@@ -65,6 +65,7 @@ body {
      width: 100vw;
     box-sizing: border-box;
     position: relative;
+    padding: 0 2rem;
 }
 
 .navbar .logo img {
@@ -142,6 +143,7 @@ body {
     background-color: blanchedalmond;
     flex-wrap: wrap;
     width: 100vw;
+    padding: 1rem 0;
 }
 
 
