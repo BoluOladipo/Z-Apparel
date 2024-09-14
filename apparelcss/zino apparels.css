@@ -62,7 +62,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: #f1c40f;
-     width: 100vw;
+     width: 95.8vw;
     box-sizing: border-box;
     position: relative;
     padding: 0 2rem;
@@ -142,7 +142,7 @@ body {
     padding: 10px;
     background-color: blanchedalmond;
     flex-wrap: wrap;
-    width: 115vw;
+    width: 95.8vw;
     padding: 1rem 0;
 }
 
