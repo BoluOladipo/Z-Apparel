@@ -281,23 +281,34 @@
     }, 3000);
 });
 
-function closeModal() {
-    document.getElementById("successModal").style.display = "none";
+// Get the modal and close button
+var modal = document.getElementById("successModal");
+var closeButton = document.getElementsByClassName("close")[0];
+
+// Function to display the modal
+function showModal(message) {
+  var modalMessage = document.getElementById("modal-message");
+  modalMessage.textContent = message; // Update the message
+  modal.style.display = "block"; // Display the modal
 }
 
-// Show the modal when the button is clicked
-document.querySelector(".book-button").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent the form from submitting
-    document.getElementById("successModal").style.display = "block";
-});
+// Function to close the modal
+closeButton.onclick = function() {
+  modal.style.display = "none";
+}
 
-// Optional: Close the modal when clicking outside of it
+// Close the modal when clicking outside of it
 window.onclick = function(event) {
-    if (event.target == document.getElementById("successModal")) {
-        closeModal();
-    }
-};
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
+// Example call to show the modal after form submission
+document.getElementById("submitForm").onsubmit = function(e) {
+  e.preventDefault(); // Prevent form from actually submitting
+  showModal("Form submitted successfully!"); // Show success message
+};
 // Hamburger Menu Toggling
 function toggleMenu() {
     var navbar = document.querySelector(".navbar");
