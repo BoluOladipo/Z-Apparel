@@ -39,6 +39,10 @@ body {
     display: flex;
 }
 
+.nav-links ul li a:hover {
+    color: white;
+}
+
 .nav-links ul {
     display: flex;
     list-style: none;
