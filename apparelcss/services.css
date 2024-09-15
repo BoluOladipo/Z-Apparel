@@ -167,6 +167,20 @@ body {
     margin: 0 auto;
 }
 
+/* Define floating keyframes */
+@keyframes floating {
+    0% {
+        transform: translateY(0); /* Starting position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move text slightly up */
+    }
+    100% {
+        transform: translateY(0); /* Return to starting position */
+    }
+}
+
+
 .package {
     display: flex;
     justify-content: space-between;
@@ -179,6 +193,7 @@ body {
 
 .package-text {
     max-width: 50%;
+        animation: floating 3s ease-in-out infinite; /* Float with a smooth, infinite loop */
 }
 
 .package-text h3 {
@@ -201,37 +216,56 @@ body {
     margin-bottom: 10px;
     font-size: 1em;
 }
-/* Define zoom in and out keyframes */
-@keyframes zoomIn {
-    0% {
-        transform: scale(1); /* Initial size */
+
+@media (max-width: 768px) {
+    .package {
+        flex-direction: column;
+        text-align: center;
     }
-    100% {
-        transform: scale(1.1); /* Zoomed in size */
+
+    .package-text, .package-image {
+        max-width: 100%;
+    }
+
+    .package-image img {
+        margin-top: 20px;
+        max-width: 100%;
     }
 }
 
-@keyframes zoomOut {
+
+/* Define zoom in and out keyframes */
+@keyframes fadeIn {
     0% {
-        transform: scale(1.1); /* Start from zoomed in */
+       opacity: 0; /* Initially invisible */
     }
     100% {
-        transform: scale(1); /* Back to original size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        opacity: 0; /* Invisible */
     }
 }
 .package-image img {
     max-width: 300px;
     border-radius: 5px;
+     opacity: 1; /* Set initial opacity */
        transition: transform 0.5s ease; /* Smooth transition */
 }
 
 
 .package-image img:hover {
-    animation: zoomIn 0.5s forwards; /* Zoom in on hover */
+    animation: fadeIn 0.5s forwards; /* Zoom in on hover */
 }
 
 .package-image img:mouseleave {
-    animation: zoomOut 0.5s forwards; /* Zoom out when hover is removed */
+    animation: fadeOut 0.5s forwards; /* Zoom out when hover is removed */
 }
 
 /* Responsive Design for packages */
