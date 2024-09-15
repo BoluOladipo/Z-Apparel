@@ -261,11 +261,11 @@ body {
 
 
 .package-image img:hover {
-    animation: fadeIn 0.5s forwards; /* Zoom in on hover */
+    animation: fadeIn 1s forwards; /* Zoom in on hover */
 }
 
 .package-image img:mouseleave {
-    animation: fadeOut 0.5s forwards; /* Zoom out when hover is removed */
+    animation: fadeOut 1s forwards; /* Zoom out when hover is removed */
 }
 
 /* Responsive Design for packages */
