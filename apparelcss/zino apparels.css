@@ -84,6 +84,7 @@ body {
 
 .nav-links {
     display: flex;
+    color: #fff; /* Change color to white on hover */
 }
 
 .nav-links ul {
