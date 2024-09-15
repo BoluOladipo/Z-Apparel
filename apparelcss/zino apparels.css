@@ -55,69 +55,57 @@ body {
 .splash-content p {
     font-size: 1rem; /* Adjust font size as needed */
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Aligns items (logo, links, hamburger) in the center vertically */
+    align-items: center;
     padding: 10px 20px;
     background-color: #f1c40f;
-    width: 95.8vw;
+    width: 100vw;
     box-sizing: border-box;
     position: relative;
 }
 
 .navbar .logo img {
     height: 85px;
-    margin-top: 0; /* Remove any margin to align properly */
-    display: block;
 }
-
 .menu-toggle {
     display: none;
     font-size: 30px;
     cursor: pointer;
-    color: black;
-    align-self: center; /* Makes sure the hamburger stays vertically aligned */
+    position: absolute;
+    right: 20px;
+    color: #333; /* Default color for the hamburger icon */
 }
 
 .menu-toggle:hover {
-    color: white; /* Optional: Change this to the hover color */
+    color: #fff; /* Change color to white on hover */
 }
+
 .nav-links {
     display: flex;
 }
 
-.logo {
-  flex: 1; /* Adjust this if necessary */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;;
-  flex: 1;
+.nav-links ul li {
+    margin-left: 20px;
 }
 
-nav ul li {
-  margin: 0 15px;
+.nav-links ul li a {
+    text-decoration: none;
+    color: #333;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-@media (max-width: 1024px) {
-    .menu-toggle {
-        display: block; /* Only show on smaller screens */
-    }
-
+@media (max-width: 768px) {
     .navbar {
-        flex-direction: row; /* Ensure the layout remains horizontal */
-        align-items: center; /* Aligns both logo and hamburger vertically */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .nav-links {
@@ -129,7 +117,7 @@ nav ul li a {
     .navbar.active .nav-links {
         display: flex;
     }
-}
+
     .nav-links ul {
         flex-direction: column;
         align-items: flex-start;
@@ -139,6 +127,72 @@ nav ul li a {
 
     .nav-links ul li {
         margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+@media (max-width: 480px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: nowrap; /* Keep the elements on one line */
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .logo img {
+        max-width: 80px;
+    }
+
+    .nav-links ul {
+        gap: 10px; /* Reduces the gap between the links */
+    }
+
+    .nav-links ul li a {
+        font-size: 1em; /* Reduces the font size */
+    }
+
+    .search-bar input {
+        max-width: 120px; /* Further limits the input width */
+    }
+}
+
+/* Additional styling for very small screens (mobile phones) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+        flex-wrap: nowrap; /* Ensure it stays in one line */
+    }
+
+    .logo img {
+        max-width: 60px;
+    }
+
+    .nav-links ul {
+        gap: 5px; /* Even smaller gap between links */
+    }
+
+    .nav-links ul li a {
+        font-size: 0.9em; /* Further reduce the font size */
+    }
+
+    .search-bar input {
+        max-width: 100px; /* Adjust input width to fit well on small screens */
+    }
+
+    .search-bar button {
+        padding: 5px 10px; /* Reduce button padding */
     }
 }
 
