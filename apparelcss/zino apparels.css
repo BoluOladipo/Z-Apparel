@@ -98,6 +98,10 @@ body {
     margin-left: 20px;
 }
 
+.nav-links ul li a:hover {
+    color: white;
+}
+
 .nav-links ul li a {
     text-decoration: none;
     color: #333;
@@ -105,7 +109,7 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
     }
