@@ -201,10 +201,37 @@ body {
     margin-bottom: 10px;
     font-size: 1em;
 }
+/* Define zoom in and out keyframes */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1); /* Initial size */
+    }
+    100% {
+        transform: scale(1.1); /* Zoomed in size */
+    }
+}
 
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.1); /* Start from zoomed in */
+    }
+    100% {
+        transform: scale(1); /* Back to original size */
+    }
+}
 .package-image img {
     max-width: 300px;
     border-radius: 5px;
+       transition: transform 0.5s ease; /* Smooth transition */
+}
+
+
+.package-image img:hover {
+    animation: zoomIn 0.5s forwards; /* Zoom in on hover */
+}
+
+.package-image img:mouseleave {
+    animation: zoomOut 0.5s forwards; /* Zoom out when hover is removed */
 }
 
 /* Responsive Design for packages */
